@@ -3,6 +3,9 @@ int cols, rows;
 color[][] colors;
 int saved_i = -1;
 int saved_j = -1;
+
+int lives = 3; //3 attempts 
+int attempt = 0; //set the first attempt at 0
  
 void setup() {
   size(1300, 600);
@@ -43,5 +46,13 @@ void mousePressed() {
         }
       }
     }
+  }
+}
+
+//if lose, show game over display
+void gameOver() {
+  if (attempt == lives) {
+    fill(255);
+    text("Game over", width/2, height/2);
   }
 }
